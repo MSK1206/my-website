@@ -1,15 +1,23 @@
 import { client } from "@/libs/client";
 import { Blog } from "@/types/blog";
-import React from "react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
-const BlogId: React.FC<Blog> = ({ blog }: any) => {
+type Props = {
+  blog: Blog[];
+};
+
+const BlogId: React.FC<Props> = ({ blog }: any) => {
   return (
     <main>
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
+          __html: `${blog.content}`,
         }}
       />
     </main>
@@ -22,12 +30,12 @@ export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map(
-    (content: { id: any }) => `/blog/${content.id}`
+    (content: { id: string }) => `/blog/${content.id}`
   );
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: { params: { id: any } }) => {
+export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
 
