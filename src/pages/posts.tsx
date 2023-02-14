@@ -6,7 +6,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
-import styles from "@/styles/Post.module.css";
+import styles from "@/styles/Posts.module.css";
 import Image from "next/image";
 
 type Props = {
