@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { client } from "@/libs/client";
 import { Blog } from "@/types/blog";
@@ -7,7 +8,6 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 import styles from "@/styles/Posts.module.css";
-import Image from "next/image";
 
 type Props = {
   blog: Blog[];
@@ -21,7 +21,7 @@ const Posts: React.FC<Props> = ({ blog }) => {
           {blog.map((blog) => (
             <li key={blog.id}>
               <Link href={`/blog/${blog.id}`}>
-                <Image
+                <img
                   className={styles.eyecatch_img}
                   src={blog.eyecatch.url}
                   width={300}
