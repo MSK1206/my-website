@@ -10,7 +10,7 @@ export default function Home() {
         titleTemplate={"My-WebSite"}
         description={"Next.js + TypeScript Sample Project."}
         ogType={"website"}
-        imgUrl={"/ogimg_sample.png"}
+        imgUrl={"/ogimg_sample.jpg"}
       />
       <main className={styles.main}>
         <div className={styles.description}>
