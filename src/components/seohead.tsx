@@ -13,7 +13,7 @@ export const SeoHead = ({
   const router = useRouter();
   const siteUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}`;
   const Url = `${siteUrl}${router.asPath}`;
-  const siteTitle = `${title} - ${titleTemplate} `;
+  const siteTitle = `${title} - ${titleTemplate}`;
   return (
     <Head>
       <title>{siteTitle}</title>

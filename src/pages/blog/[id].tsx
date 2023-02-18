@@ -33,7 +33,7 @@ const BlogId: React.FC<Props> = ({ blog }: any) => {
           className={styles.post}
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
-      </div>{" "}
+      </div>
     </main>
   );
 };
