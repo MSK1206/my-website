@@ -6,6 +6,7 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 import styles from "@/styles/Blogid.module.css";
+import { SeoHead } from "@/components/seohead";
 
 type Props = {
   blog: Blog[];
@@ -13,28 +14,37 @@ type Props = {
 
 const BlogId: React.FC<Props> = ({ blog }: any) => {
   return (
-    <main>
-      <div>
-        <h1 className={styles.title}>{blog.title}</h1>
-        <p className={styles.publishedAt}>
-          投稿日：
-          {dayjs
-            .utc(blog.publishedAt)
-            .tz("Asia/Tokyo")
-            .format(
-              "YYYY" + "年" + "MM" + "月" + "DD" + "日" + "hh" + ":" + "mm"
-            )}
-        </p>
-        <p className={styles.category}>
-          タグ：{blog.category && `${blog.category.name}`}
-        </p>
+    <>
+      <SeoHead
+        title={blog.title}
+        titleTemplate="My-WebSite"
+        description="Next.js + TypeScript + microCMS Sample Project."
+        ogType="article"
+        imgUrl={blog.eyecatch.url}
+      />
+      <main>
+        <div>
+          <h1 className={styles.title}>{blog.title}</h1>
+          <p className={styles.publishedAt}>
+            投稿日：
+            {dayjs
+              .utc(blog.publishedAt)
+              .tz("Asia/Tokyo")
+              .format(
+                "YYYY" + "年" + "MM" + "月" + "DD" + "日" + "hh" + ":" + "mm"
+              )}
+          </p>
+          <p className={styles.category}>
+            タグ：{blog.category && `${blog.category.name}`}
+          </p>
 
-        <div
-          className={styles.post}
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
-      </div>
-    </main>
+          <div
+            className={styles.post}
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
+        </div>
+      </main>
+    </>
   );
 };
 
