@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Contact.module.css";
 import { SeoHead } from "@/components/seohead";
 
-export const Contact = () => {
+const Contact: React.FC = () => {
   const FormrunID: string = `${process.env.FORMRUN_FORM_ID}`;
   useEffect(() => {
     const head = document.getElementsByTagName("head")[0] as HTMLElement;
@@ -34,3 +34,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;
