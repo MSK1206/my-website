@@ -1,3 +1,4 @@
+import React from "react";
 import { client } from "@/libs/client";
 import { Blog } from "@/types/blog";
 import dayjs from "dayjs";

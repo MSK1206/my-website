@@ -1,5 +1,6 @@
-import { SeoHead } from "@/components/seohead";
+import React from "react";
 import { useEffect } from "react";
+import { SeoHead } from "@/components/seohead";
 import styles from "../styles/Contact.module.css";
 
 const Contact: React.FC = () => {
