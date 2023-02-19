@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
     };
   }, []);
   return (
-    <>
+    <div>
       <SeoHead
         title={"お問い合わせ"}
         titleTemplate={"My-WebSite"}
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
           />
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
