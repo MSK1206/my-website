@@ -1,9 +1,8 @@
-import React from "react";
 import { useEffect } from "react";
-import { SeoHead } from "@/components/seohead";
 import styles from "../styles/Contact.module.css";
+import { SeoHead } from "@/components/seohead";
 
-const Contact: React.FC = () => {
+export const Contact = () => {
   const FormrunID: string = `${process.env.FORMRUN_FORM_ID}`;
   useEffect(() => {
     const head = document.getElementsByTagName("head")[0] as HTMLElement;
@@ -15,7 +14,7 @@ const Contact: React.FC = () => {
     };
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       <SeoHead
         title={"お問い合わせ"}
         titleTemplate={"My-WebSite"}
@@ -35,5 +34,3 @@ const Contact: React.FC = () => {
     </div>
   );
 };
-
-export default Contact;
