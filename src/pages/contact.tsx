@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import styles from "../styles/Contact.module.css";
-import { SeoHead } from "@/components/seohead";
 
 const Contact: React.FC = () => {
   const FormrunID: string = `${process.env.FORMRUN_FORM_ID}`;
@@ -14,24 +13,15 @@ const Contact: React.FC = () => {
     };
   }, []);
   return (
-    <div className={styles.container}>
-      <SeoHead
-        title={"お問い合わせ"}
-        titleTemplate={"My-WebSite"}
-        description={"Next.js + TypeScript Sample Project."}
-        ogType={"website"}
-        imgUrl={"/ogimg_sample.jpg"}
-      />
-      <main className={styles.main}>
-        <div className={styles.formrun_width}>
-          <div
-            className="formrun-embed"
-            data-formrun-form={FormrunID}
-            data-formrun-redirect="true"
-          />
-        </div>
-      </main>
-    </div>
+    <main className={styles.main}>
+      <div className={styles.formrun_width}>
+        <div
+          className="formrun-embed"
+          data-formrun-form={FormrunID}
+          data-formrun-redirect="true"
+        />
+      </div>
+    </main>
   );
 };
 
