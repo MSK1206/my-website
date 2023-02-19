@@ -14,7 +14,7 @@ const Contact: NextPage = () => {
     };
   }, []);
   return (
-    <div className={styles.formrun_width}>
+    <div className={styles.formrunwidth}>
       <div
         className="formrun-embed"
         data-formrun-form={FormrunID}
