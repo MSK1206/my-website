@@ -17,12 +17,12 @@ const BlogId: React.FC<Props> = ({ blog }: any) => {
     <>
       <SeoHead
         title={blog.title}
-        titleTemplate="My-WebSite"
-        description="Next.js + TypeScript + microCMS Sample Project."
-        ogType="article"
+        titleTemplate={"My-WebSite"}
+        description={"Next.js + TypeScript + microCMS Sample Project."}
+        ogType={"article"}
         imgUrl={blog.eyecatch.url}
       />
-      <main>
+      <main className={styles.main}>
         <div>
           <h1 className={styles.title}>{blog.title}</h1>
           <p className={styles.publishedAt}>

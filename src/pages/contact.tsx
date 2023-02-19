@@ -1,3 +1,4 @@
+import { SeoHead } from "@/components/seohead";
 import { useEffect } from "react";
 import styles from "../styles/Contact.module.css";
 
@@ -13,15 +14,24 @@ const Contact: React.FC = () => {
     };
   }, []);
   return (
-    <main className={styles.main}>
-      <div className={styles.formrun_width}>
-        <div
-          className="formrun-embed"
-          data-formrun-form={FormrunID}
-          data-formrun-redirect="true"
-        />
-      </div>
-    </main>
+    <>
+      <SeoHead
+        title={"お問い合わせ"}
+        titleTemplate={"My-WebSite"}
+        description={"Next.js + TypeScript Sample Project."}
+        ogType={"website"}
+        imgUrl={"/ogimg_sample.jpg"}
+      />
+      <main className={styles.main}>
+        <div className={styles.formrun_width}>
+          <div
+            className="formrun-embed"
+            data-formrun-form={FormrunID}
+            data-formrun-redirect="true"
+          />
+        </div>
+      </main>
+    </>
   );
 };
 

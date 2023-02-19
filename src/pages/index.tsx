@@ -15,6 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <Link href={"/posts"}>ブログページを表示する</Link>
+          <Link href={"/contact"}>お問い合せフォームを表示する</Link>
         </div>
       </main>
     </>
