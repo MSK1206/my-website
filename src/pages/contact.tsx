@@ -1,8 +1,7 @@
-import { NextPage } from "next";
 import { useEffect } from "react";
 import styles from "../styles/Contact.module.css";
 
-const Contact: NextPage = () => {
+const Contact: React.FC = () => {
   const FormrunID: string = `${process.env.FORMRUN_FORM_ID}`;
   useEffect(() => {
     const head = document.getElementsByTagName("head")[0] as HTMLElement;
@@ -14,13 +13,15 @@ const Contact: NextPage = () => {
     };
   }, []);
   return (
-    <div className={styles.formrunwidth}>
-      <div
-        className="formrun-embed"
-        data-formrun-form={FormrunID}
-        data-formrun-redirect="true"
-      />
-    </div>
+    <main className={styles.main}>
+      <div className={styles.formrunwidth}>
+        <div
+          className="formrun-embed"
+          data-formrun-form={FormrunID}
+          data-formrun-redirect="true"
+        />
+      </div>
+    </main>
   );
 };
 
